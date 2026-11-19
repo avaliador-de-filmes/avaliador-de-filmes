@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Environment secrets (keep .env.example versioned)
+.env
+.env.local
+
+# Generated local mock database
+mocks/db.json
+
+# Test coverage
+coverage/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
