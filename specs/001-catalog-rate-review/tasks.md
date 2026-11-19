@@ -227,4 +227,26 @@ Run in parallel after US1 baseline:
 
 ## Phase 7: Convergence
 
-- [ ] T058 Consolidar artefato canônico de persistência local para clone limpo (restaurar/versionar `mocks/db.json` com as coleções seed ou alinhar quickstart/scripts/tasks para `mocks/db.seed.json`) per T003; plan: storage decision (`mocks/db.json`) (partial)
+- [X] T058 Consolidar artefato canônico de persistência local para clone limpo (restaurar/versionar `mocks/db.json` com as coleções seed ou alinhar quickstart/scripts/tasks para `mocks/db.seed.json`) per T003; plan: storage decision (`mocks/db.json`) (partial)
+
+## Phase 8: Convergence
+
+- [X] T059 Unificar a fonte canônica de dados locais entre `mocks/db.json` e `mocks/db.seed.json`, eliminando sobrescrita ambígua no reset (`scripts/dev-with-mocks.mjs`) e alinhando documentação/scripts ao artefato único per T058; plan: storage decision (`mocks/db.json`) (partial)
+
+## Phase 9: Convergence
+
+- [X] T060 Restabelecer comportamento real de reset local no `scripts/dev-with-mocks.mjs --reset-only`, garantindo restauração determinística a partir de uma única fonte canônica (`mocks/db.json`) per T008; T059; plan: storage decision (`mocks/db.json`) (partial)
+
+## Phase 10: Convergence
+
+- [ ] T061 CRITICAL Configurar gates obrigatórios de qualidade com thresholds mínimos de cobertura (80% linhas/70% branches) e registrar evidências de lint/test/a11y em `vitest.config.js`, `package.json` e `specs/001-catalog-rate-review/implementation-notes.md` per Constitution III; T055; T057 (contradicts)
+- [ ] T062 CRITICAL Garantir operabilidade por teclado e regressão de acessibilidade dos fluxos principais com `tests/integration/us1-keyboard.a11y.test.jsx` e `tests/integration/critical-flows.a11y.test.jsx` per Constitution IV; FR-012; T028; T053 (missing)
+- [ ] T063 Implementar fluxo P1 de catálogo (buscar/salvar/atualizar status/remover com prevenção de duplicidade) em `src/features/save-media/model/save-media.js`, `src/features/update-status/model/update-status.js`, `src/features/update-status/model/remove-catalog-item.js`, `src/widgets/media-search/ui/media-search.jsx`, `src/widgets/catalog-list/ui/catalog-list.jsx` e `src/pages/catalog-page/ui/catalog-page.jsx`, incluindo rotas em `src/app/routes/router.jsx` per FR-001; FR-002; FR-003; FR-009; US1/AC1; US1/AC2; US1/AC3 (missing)
+- [ ] T064 Implementar casos de uso de avaliação com validação 1..5, regra de mídia salva e atualização da nota ativa em `src/features/rate-media/model/rate-media.js` e `src/features/rate-media/model/rating-eligibility.js` per FR-004; FR-005; US2/AC1; US2/AC2; edge-case: avaliar mídia não salva (missing)
+- [ ] T065 Integrar apresentação de média/quantidade de avaliações na interface em `src/entities/rating/ui/rating-summary.jsx` e `src/pages/media-details-page/ui/media-details-page.jsx` per FR-010; US2/AC1; US2/AC2 (partial)
+- [ ] T066 Implementar ciclo de vida de resenha (criar/editar/excluir) com regra de uma resenha ativa por usuário+mídia em `src/features/review-media/model/review-media.js` per FR-006; FR-008; FR-016; US3/AC1; US3/AC2 (missing)
+- [ ] T067 Aplicar validação de conteúdo de resenha (20-2000) com mensagens de erro no formulário em `src/features/review-media/ui/review-form.jsx` per FR-007; edge-case: resenha vazia/acima do limite (partial)
+- [ ] T068 Implementar visualização pública de avaliações/resenhas e bloqueio de mutações para visitante em `src/widgets/public-reviews/ui/public-reviews.jsx`, `src/pages/public-media-page/ui/public-media-page.jsx` e `src/features/review-media/model/review-permissions.js` per FR-013; FR-014; US3/AC3; US3/AC4 (missing)
+- [ ] T069 Implementar fallback/retry de falhas da OMDb com mensagens claras em `src/shared/ui/omdb-fallback.jsx` e integração nas telas de busca/detalhes per FR-011; edge-case: mídia indisponível no provedor externo; T054 (partial)
+- [ ] T070 Completar suíte de testes por história em `tests/integration/us1-save-media.integration.test.jsx`, `tests/integration/us2-rate-media.integration.test.jsx`, `tests/integration/us3-review.integration.test.jsx`, `tests/contract/us2-ratings.contract.test.js` e `tests/contract/us3-reviews.contract.test.js` per Constitution III; T027; T038; T039; T045; T046 (missing)
+- [ ] T071 Alinhar `specs/001-catalog-rate-review/quickstart.md` ao fluxo canônico com `scripts/dev-with-mocks.mjs` e `mocks/db.runtime.json` após fechamento funcional per T056; plan: storage decision (`mocks/db.json`) (partial)

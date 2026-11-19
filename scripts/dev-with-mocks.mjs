@@ -5,8 +5,8 @@ import { join } from "node:path";
 import process from "node:process";
 
 const ROOT = process.cwd();
-const SEED_PATH = join(ROOT, "mocks", "db.seed.json");
-const DB_PATH = join(ROOT, "mocks", "db.json");
+const CANONICAL_DB_PATH = join(ROOT, "mocks", "db.json");
+const RUNTIME_DB_PATH = join(ROOT, "mocks", "db.runtime.json");
 const JSON_SERVER_BIN = join(ROOT, "node_modules", "json-server", "lib", "cli", "bin.js");
 const VITE_BIN = join(ROOT, "node_modules", "vite", "bin", "vite.js");
 const MOCKS_PORT = 3001;
@@ -28,12 +28,12 @@ function fail(message) {
 }
 
 function resetDatabase() {
-  if (!existsSync(SEED_PATH)) {
-    fail(`Seed não encontrado em ${SEED_PATH}.`);
+  if (!existsSync(CANONICAL_DB_PATH)) {
+    fail(`Banco canônico não encontrado em ${CANONICAL_DB_PATH}.`);
   }
 
-  copyFileSync(SEED_PATH, DB_PATH);
-  log("Banco local restaurado a partir de mocks/db.seed.json.");
+  copyFileSync(CANONICAL_DB_PATH, RUNTIME_DB_PATH);
+  log("Banco de execução restaurado deterministicamente a partir de mocks/db.json.");
 }
 
 function isPortInUse(port) {
@@ -135,7 +135,7 @@ async function main() {
     fail("Dependências não instaladas. Execute npm install antes de subir o ambiente.");
   }
 
-  spawnChild([JSON_SERVER_BIN, "--watch", "mocks/db.json"], "json-server");
+  spawnChild([JSON_SERVER_BIN, "--watch", "mocks/db.runtime.json"], "json-server");
 
   if (mocksOnly) {
     log(`API local em http://localhost:${MOCKS_PORT}.`);

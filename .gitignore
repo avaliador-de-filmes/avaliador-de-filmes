@@ -22,7 +22,8 @@ dist-ssr
 !.env.example
 
 # Generated local mock database
-mocks/db.json
+# (versioned as canonical seed/runtime baseline)
+mocks/db.runtime.json
 
 # Test coverage
 coverage/
