@@ -50,9 +50,9 @@
 - [X] T021 [P] Implement Rating schema validation in `src/entities/rating/model/rating.schema.js` with citations: `data-model.md (Rating.id)`, `data-model.md (Rating.userId)`, `data-model.md (Rating.mediaId)`, `data-model.md (Rating.value)`, `data-model.md (Rating.createdAt)`, `data-model.md (Rating.updatedAt)`, and uniqueness rule `data-model.md (Rating.userId + Rating.mediaId)`
 - [X] T022 [P] Implement Review schema validation in `src/entities/review/model/review.schema.js` with citations: `data-model.md (Review.id)`, `data-model.md (Review.userId)`, `data-model.md (Review.mediaId)`, `data-model.md (Review.content)`, `data-model.md (Review.isDeleted)`, `data-model.md (Review.createdAt)`, `data-model.md (Review.updatedAt)`, `data-model.md (Review.publishedAt)`, and uniqueness rule `data-model.md (Review.userId + Review.mediaId)`
 - [X] T023 [P] Implement media rating summary aggregator in `src/entities/rating/model/media-rating-summary.js` with citations: `data-model.md (MediaRatingSummary.mediaId)`, `data-model.md (MediaRatingSummary.averageRating)`, `data-model.md (MediaRatingSummary.ratingsCount)`
-- [ ] T024 Create OMDb contract tests (search/detail + normalized errors) in `tests/contract/omdb-adapter.contract.test.js`
-- [ ] T025 Create JSON Server contract tests for catalog/ratings/reviews resources in `tests/contract/json-server.contract.test.js`
-- [ ] T026 Create integration smoke test for providers + routes + shared API bootstrapping in `tests/integration/app-shell.integration.test.jsx`
+- [X] T024 Create OMDb contract tests (search/detail + normalized errors) in `tests/contract/omdb-adapter.contract.test.js`
+- [X] T025 Create JSON Server contract tests for catalog/ratings/reviews resources in `tests/contract/json-server.contract.test.js`
+- [X] T026 Create integration smoke test for providers + routes + shared API bootstrapping in `tests/integration/app-shell.integration.test.jsx`
 
 **Checkpoint**: Foundation ready — user story implementation can now begin.
 
