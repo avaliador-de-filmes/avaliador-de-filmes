@@ -71,3 +71,35 @@
 - Add comments or findings inline
 - Link to relevant resources or documentation
 - Items are numbered sequentially for easy reference
+
+## Respostas Consolidadas (2026-11-19)
+
+As respostas abaixo foram fornecidas pelo usuário para referência futura das tasks, sem alteração automática dos marcadores do checklist.
+
+- CHK001: Não, um usuário só pode criar, editar e excluir avaliações e resenhas.
+- CHK002: Autor, data de lançamento, nota média, capa e nome do título.
+- CHK003: O item deve vir por API, então não existe a possibilidade de remoção da mídia do catálogo.
+- CHK004: O usuário não salva mídias.
+- CHK005: Seguir com a abordagem que você achar melhor para o projeto.
+- CHK006: Não.
+- CHK007: As regras de visibilidade pública (o que é público vs. privado) são idênticas nos Requisitos Funcionais (FRs) e nas premissas, sem contradições.
+- CHK008: Cada par (usuário, obra) possui apenas um registro vigente de lista, nota e resenha ativa, atualizando o existente em vez de criar duplicatas.
+- CHK009: O escopo de séries (ex.: tratar como obra única ou por temporada) está alinhado entre as clarificações, o FR-015 e as premissas.
+- CHK010: Os cenários de aceite de US1, US2 e US3 definem entradas, ações e saídas concretas e testáveis, sem termos subjetivos.
+- CHK011: Cada Critério de Sucesso (SC) especifica como medir, qual amostra observar (ex.: p95, total de ações) e o período de avaliação.
+- CHK012: Todos os FRs estão ligados diretamente a pelo menos um cenário de aceite e/ou métrica verificável.
+- CHK013: O spec diferencia explicitamente o primeiro salvamento (cria registro inicial) da edição de obra já salva (atualiza registro existente).
+- CHK014: Visitantes não autenticados têm mutações (salvar, avaliar, resenhar) bloqueadas e são redirecionados ao login com mensagem clara.
+- CHK015: Além de um retry, o sistema define limite de tentativas, mantém o rascunho local e orienta o usuário caso a falha persista.
+- CHK016: Envios repetidos em curto intervalo (save/rate/review) são bloqueados ou tratados via upsert para evitar registros duplicados.
+- CHK017: Notas fora do intervalo 1..5 ou não inteiras (ex.: decimais, texto, vazio) são rejeitadas com mensagem de validação objetiva.
+- CHK018: Resenhas com exatamente 20 ou 2000 caracteres são aceitas, enquanto textos só com espaços (ou abaixo de 20 após trim()) são rejeitados.
+- CHK019: Existem metas numéricas de tempo de resposta (ex.: p95 em ms/s) definidas para busca, salvamento, avaliação e resenha.
+- CHK020: Além de teclado, o spec exige foco gerenciado em modais/erros, rótulos acessíveis (aria-label) e anúncios de status (aria-live).
+- CHK021: A integração com a OMDb define tratamento e fallback para timeout, resposta inválida/malformada e limite de requisições (rate limit).
+- CHK022: Os campos e formatos esperados da OMDb API e do JSON Server estão mapeados diretamente nos FRs que os utilizam.
+- CHK023: Premissas que afetam critérios de aceite estão validadas, delimitadas ou marcadas como pendência explícita.
+- CHK024: A chave da API deve ser carregada apenas via variáveis de ambiente (env), proibindo exposição no repositório.
+- CHK025: Funcionalidades como seguir usuários, curtidas e comentários estão listadas explicitamente como fora de escopo (não-objetivos).
+- CHK026: "Mídia salva" (na lista), "item ativo" (registro vigente) e "resenha ativa" (texto publicado vigente) têm definições distintas e sem ambiguidade.
+- CHK027: Rascunhos/dados locais não aparecem publicamente até serem confirmados, com regra clara de sincronização entre estado local e público.
