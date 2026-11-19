@@ -8,13 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+node_modules/
 dist
+dist/
+build/
 dist-ssr
 *.local
 
 # Environment secrets (keep .env.example versioned)
 .env
 .env.local
+.env*
+!.env.example
 
 # Generated local mock database
 mocks/db.json
@@ -26,7 +31,10 @@ coverage/
 .vscode/*
 !.vscode/extensions.json
 .idea
+.idea/
 .DS_Store
+Thumbs.db
+*.tmp
 *.suo
 *.ntvs*
 *.njsproj

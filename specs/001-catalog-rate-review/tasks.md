@@ -35,8 +35,8 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T009 Create application bootstrap with providers in `src/app/index.jsx`
-- [ ] T010 Create route registry and page-level boundaries in `src/app/routes/router.jsx`
+- [X] T009 Create application bootstrap with providers in `src/app/index.jsx`
+- [X] T010 Create route registry and page-level boundaries in `src/app/routes/router.jsx`
 - [ ] T011 [P] Implement OMDb HTTP adapter with normalized error contract in `src/shared/api/omdb/client.js`
 - [ ] T012 [P] Implement OMDb search/detail mappers to normalized media model in `src/shared/api/omdb/mapper.js`
 - [ ] T013 [P] Implement JSON Server HTTP adapter in `src/shared/api/json-server/client.js`
