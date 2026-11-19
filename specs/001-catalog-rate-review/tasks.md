@@ -224,3 +224,7 @@ Run in parallel after US1 baseline:
 - `[P]` tasks are scoped to different files with no unmet dependencies.
 - Story labels (`[US1]`, `[US2]`, `[US3]`) provide traceability to spec priorities.
 - All constrained fields from `data-model.md` are explicitly cited in implementing tasks (`T018`–`T023`, with additional story-level citations).
+
+## Phase 7: Convergence
+
+- [ ] T058 Consolidar artefato canônico de persistência local para clone limpo (restaurar/versionar `mocks/db.json` com as coleções seed ou alinhar quickstart/scripts/tasks para `mocks/db.seed.json`) per T003; plan: storage decision (`mocks/db.json`) (partial)
