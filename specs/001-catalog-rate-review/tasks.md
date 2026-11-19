@@ -18,14 +18,14 @@
 
 **Purpose**: Project initialization and baseline tooling.
 
-- [ ] T001 Update project dependencies and scripts for React Router, JSON Server, Vitest, RTL, MSW, jest-axe, and coverage in `package.json`
-- [ ] T002 Create environment template with `VITE_OMDB_API_KEY` and API base URLs in `.env.example`
-- [ ] T003 Create local persistence seed collections (`users`, `media`, `catalogItems`, `ratings`, `reviews`) in `mocks/db.json`
-- [ ] T004 Create JSON Server configuration in `json-server.json`
-- [ ] T005 Create FSD folder skeleton and placeholder indexes in `src/app/.gitkeep`, `src/pages/.gitkeep`, `src/widgets/.gitkeep`, `src/features/.gitkeep`, `src/entities/.gitkeep`, and `src/shared/.gitkeep`
-- [ ] T006 Configure Vitest runtime, jsdom, and coverage reporter in `vitest.config.js`
-- [ ] T007 [P] Create test bootstrap (RTL matchers, MSW server, jest-axe setup) in `tests/setupTests.js`
-- [ ] T008 Create local dev orchestration for app + mocks in `scripts/dev-with-mocks.mjs`
+- [X] T001 Update project dependencies and scripts for React Router, JSON Server, Vitest, RTL, MSW, jest-axe, and coverage in `package.json`
+- [X] T002 Create environment template with `VITE_OMDB_API_KEY` and API base URLs in `.env.example`
+- [X] T003 Create local persistence seed collections (`users`, `media`, `catalogItems`, `ratings`, `reviews`) in `mocks/db.json`
+- [X] T004 Create JSON Server configuration in `json-server.json`
+- [X] T005 Create FSD folder skeleton and placeholder indexes in `src/app/.gitkeep`, `src/pages/.gitkeep`, `src/widgets/.gitkeep`, `src/features/.gitkeep`, `src/entities/.gitkeep`, and `src/shared/.gitkeep`
+- [X] T006 Configure Vitest runtime, jsdom, and coverage reporter in `vitest.config.js`
+- [X] T007 [P] Create test bootstrap (RTL matchers, MSW server, jest-axe setup) in `tests/setupTests.js`
+- [X] T008 Create local dev orchestration for app + mocks in `scripts/dev-with-mocks.mjs`
 
 ---
 
