@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "u_1",
+      "username": "cinefilo",
+      "displayName": "Usuário Teste",
+      "avatarUrl": null,
+      "createdAt": "2026-11-18T12:00:00.000Z"
+    }
+  ],
+  "media": [
+    {
+      "id": "tt0133093",
+      "type": "movie",
+      "title": "The Matrix",
+      "year": "1999",
+      "posterUrl": "https://example.com/posters/the-matrix.jpg",
+      "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality.",
+      "genres": ["Action", "Sci-Fi"],
+      "imdbRating": 8.7,
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    },
+    {
+      "id": "tt0903747",
+      "type": "series",
+      "title": "Breaking Bad",
+      "year": "2008–2013",
+      "posterUrl": "https://example.com/posters/breaking-bad.jpg",
+      "plot": "A chemistry teacher diagnosed with cancer turns to manufacturing drugs to secure his family's future.",
+      "genres": ["Crime", "Drama", "Thriller"],
+      "imdbRating": 9.5,
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    }
+  ],
+  "catalogItems": [
+    {
+      "id": "ci_1",
+      "userId": "u_1",
+      "mediaId": "tt0133093",
+      "status": "want_to_watch",
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    }
+  ],
+  "ratings": [
+    {
+      "id": "ra_1",
+      "userId": "u_1",
+      "mediaId": "tt0133093",
+      "value": 5,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rv_1",
+      "userId": "u_1",
+      "mediaId": "tt0133093",
+      "content": "Um clássico da ficção científica que redefine a percepção da realidade.",
+      "isDeleted": false,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "updatedAt": "2026-11-18T12:00:00.000Z",
+      "publishedAt": "2026-11-18T12:00:00.000Z"
+    }
+  ]
+}
