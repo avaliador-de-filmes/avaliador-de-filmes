@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react'
 import { listPublicReviews } from '../../../features/review-media/model/review-media'
+import { getReviewPermissions } from '../../../features/review-media/model/review-permissions'
 import { jsonServerResources } from '../../../shared/api/json-server/resources'
 
 const LIST_STATUS = Object.freeze({
@@ -144,11 +145,11 @@ export default function PublicReviews({
               author?.displayName || author?.username || review.userId
             const publishedAt = formatReviewDate(review.publishedAt)
             const updatedAt = formatReviewDate(review.updatedAt)
-            const isOwner = Boolean(
-              isAuthenticated &&
-                currentUserId &&
-                review.userId === currentUserId,
-            )
+            const isOwner = getReviewPermissions({
+              isAuthenticated,
+              currentUserId,
+              review,
+            }).isOwner
 
             return (
               <li key={review.id} className="public-reviews__item">
