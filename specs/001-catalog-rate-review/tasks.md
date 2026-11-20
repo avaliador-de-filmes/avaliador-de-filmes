@@ -98,9 +98,9 @@
 
 ### Implementation for User Story 2
 
-- [ ] T040 [P] [US2] Implement rate-media use case with 1..5 validation and single-active rule in `src/features/rate-media/model/rate-media.js` using citations `data-model.md (Rating.value)`, `data-model.md (Rating.userId)`, `data-model.md (Rating.mediaId)`, `data-model.md (Rating.updatedAt)`, `data-model.md (Rating.userId + Rating.mediaId)`
-- [ ] T041 [P] [US2] Implement rating editor UI (pointer + keyboard) in `src/features/rate-media/ui/rating-editor.jsx`
-- [ ] T042 [P] [US2] Implement rating summary presenter in `src/entities/rating/ui/rating-summary.jsx` using citations `data-model.md (MediaRatingSummary.averageRating)`, `data-model.md (MediaRatingSummary.ratingsCount)`
+- [X] T040 [P] [US2] Implement rate-media use case with 1..5 validation and single-active rule in `src/features/rate-media/model/rate-media.js` using citations `data-model.md (Rating.value)`, `data-model.md (Rating.userId)`, `data-model.md (Rating.mediaId)`, `data-model.md (Rating.updatedAt)`, `data-model.md (Rating.userId + Rating.mediaId)`
+- [X] T041 [P] [US2] Implement rating editor UI (pointer + keyboard) in `src/features/rate-media/ui/rating-editor.jsx`
+- [X] T042 [P] [US2] Implement rating summary presenter in `src/entities/rating/ui/rating-summary.jsx` using citations `data-model.md (MediaRatingSummary.averageRating)`, `data-model.md (MediaRatingSummary.ratingsCount)`
 - [ ] T043 [US2] Implement rating eligibility guard for saved catalog items in `src/features/rate-media/model/rating-eligibility.js` using citations `data-model.md (CatalogItem.userId)`, `data-model.md (CatalogItem.mediaId)`
 - [ ] T044 [US2] Integrate rating editor and summary into media details page in `src/pages/media-details-page/ui/media-details-page.jsx`
 
