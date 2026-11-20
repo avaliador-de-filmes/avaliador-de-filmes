@@ -146,7 +146,8 @@ p {
 }
 
 .field input,
-.field select {
+.field select,
+.field textarea {
   min-height: 2.5rem;
   padding: 0.5rem 0.7rem;
   border: 1px solid #c3cddb;
@@ -154,6 +155,46 @@ p {
   background-color: #ffffff;
   color: inherit;
   font: inherit;
+}
+
+.field textarea {
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.field textarea[aria-invalid='true'] {
+  border-color: #d24a3d;
+}
+
+.review-form {
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid #dde4ed;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+
+.review-form__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.review-form__form .field {
+  width: 100%;
+}
+
+.review-form__hint,
+.review-form__counter {
+  margin: 0;
+  color: #5a6b7f;
+  font-size: 0.85rem;
+}
+
+.review-form__counter {
+  align-self: flex-end;
 }
 
 .media-search__form {
