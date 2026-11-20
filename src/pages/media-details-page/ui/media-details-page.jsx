@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { omdbClient as defaultOmdbClient } from '../../../shared/api/omdb/client'
 import { jsonServerResources } from '../../../shared/api/json-server/resources'
 import { getMediaTypeLabel } from '../../../entities/media/model/media-type-label'
 import MediaPoster from '../../../entities/media/ui/media-poster'
 import { announceToLiveRegion } from '../../../shared/lib/accessibility'
+import RatingSummary from '../../../entities/rating/ui/rating-summary'
+import {
+  getRatingEligibility,
+  RATING_ELIGIBILITY_REASON,
+} from '../../../features/rate-media/model/rating-eligibility'
+import RatingEditor from '../../../features/rate-media/ui/rating-editor'
 import { useAuthSession } from '../../../shared/lib/use-auth-session'
 import SaveMediaControls from '../../../features/save-media/ui/save-media-controls'
 import {
@@ -29,6 +35,125 @@ const OWN_REVIEW_STATUS = Object.freeze({
   ready: 'ready',
   error: 'error',
 })
+
+const ELIGIBILITY_STATUS = Object.freeze({
+  loading: 'loading',
+  ready: 'ready',
+})
+
+function RatingSection({ userId, mediaId, isAuthenticated, resources }) {
+  const [ratings, setRatings] = useState([])
+  const [reloadToken, setReloadToken] = useState(0)
+  const [eligibility, setEligibility] = useState({
+    status: ELIGIBILITY_STATUS.loading,
+    eligible: false,
+    reason: null,
+  })
+
+  useEffect(() => {
+    let active = true
+
+    resources.ratings
+      .listByMedia(mediaId)
+      .then((items) => {
+        if (active) {
+          setRatings(Array.isArray(items) ? items : [])
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setRatings([])
+        }
+      })
+
+    return () => {
+      active = false
+    }
+  }, [mediaId, resources, reloadToken])
+
+  useEffect(() => {
+    let active = true
+
+    if (!isAuthenticated || !userId || !mediaId) {
+      return undefined
+    }
+
+    resources.catalogItems
+      .findByUserAndMedia({ userId, mediaId })
+      .then((catalogItem) => {
+        if (!active) {
+          return
+        }
+
+        setEligibility({
+          status: ELIGIBILITY_STATUS.ready,
+          ...getRatingEligibility({
+            isAuthenticated,
+            userId,
+            mediaId,
+            catalogItem,
+          }),
+        })
+      })
+      .catch(() => {
+        if (!active) {
+          return
+        }
+
+        setEligibility({
+          status: ELIGIBILITY_STATUS.ready,
+          eligible: false,
+          reason: RATING_ELIGIBILITY_REASON.CATALOG_LOOKUP_FAILED,
+          catalogItem: null,
+        })
+      })
+
+    return () => {
+      active = false
+    }
+  }, [isAuthenticated, userId, mediaId, resources])
+
+  const handleRated = useCallback(() => {
+    setReloadToken((token) => token + 1)
+  }, [])
+
+  const userRating = ratings.find(
+    (rating) => rating?.userId === userId && rating?.mediaId === mediaId,
+  )
+  const isCheckingEligibility =
+    isAuthenticated &&
+    Boolean(userId && mediaId) &&
+    eligibility.status === ELIGIBILITY_STATUS.loading
+
+  return (
+    <>
+      <RatingSummary mediaId={mediaId} ratings={ratings} />
+
+      {!isAuthenticated ? (
+        <RatingEditor
+          userId={userId}
+          mediaId={mediaId}
+          isAuthenticated={false}
+          resources={resources}
+        />
+      ) : isCheckingEligibility ? (
+        <p role="status">Verificando se esta mídia está no seu catálogo...</p>
+      ) : eligibility.eligible ? (
+        <RatingEditor
+          userId={userId}
+          mediaId={mediaId}
+          initialValue={userRating?.value ?? null}
+          resources={resources}
+          onRated={handleRated}
+        />
+      ) : (
+        <p className="feedback" role="status">
+          Salve esta mídia no seu catálogo para avaliá-la.
+        </p>
+      )}
+    </>
+  )
+}
 
 export default function MediaDetailsPage({
   omdbClient = defaultOmdbClient,
@@ -435,6 +560,13 @@ export default function MediaDetailsPage({
                   onDeleteReview={handleDeleteReview}
                 />
               </section>
+              <RatingSection
+                key={`${media.id}::${userId ?? ''}::${isAuthenticated}`}
+                userId={userId}
+                mediaId={mediaId}
+                isAuthenticated={isAuthenticated}
+                resources={resources}
+              />
             </>
           )}
         </>
