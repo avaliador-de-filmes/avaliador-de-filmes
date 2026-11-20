@@ -140,7 +140,7 @@ describe('ReviewForm', () => {
     await user.click(screen.getByRole('button', { name: /publicar resenha/i }))
 
     expect(
-      await screen.findByText(/resenha publicada com sucesso/i),
+      await screen.findByText(/resenha publicada com sucesso/i, { selector: 'p' }),
     ).toBeInTheDocument()
     expect(resources.reviews.create).toHaveBeenCalledWith({
       userId: USER_ID,
@@ -163,7 +163,7 @@ describe('ReviewForm', () => {
     await user.click(screen.getByRole('button', { name: /publicar resenha/i }))
 
     expect(
-      await screen.findByText(/resenha publicada com sucesso/i),
+      await screen.findByText(/resenha publicada com sucesso/i, { selector: 'p' }),
     ).toBeInTheDocument()
     expect(resources.reviews.create).toHaveBeenCalledWith(
       expect.objectContaining({ content: MIN_CONTENT }),
@@ -179,7 +179,7 @@ describe('ReviewForm', () => {
     await user.click(screen.getByRole('button', { name: /publicar resenha/i }))
 
     expect(
-      await screen.findByText(/resenha publicada com sucesso/i),
+      await screen.findByText(/resenha publicada com sucesso/i, { selector: 'p' }),
     ).toBeInTheDocument()
     expect(resources.reviews.create).toHaveBeenCalledWith(
       expect.objectContaining({ content: MAX_CONTENT }),
@@ -195,7 +195,7 @@ describe('ReviewForm', () => {
     await user.keyboard('{Control>}{Enter}{/Control}')
 
     expect(
-      await screen.findByText(/resenha publicada com sucesso/i),
+      await screen.findByText(/resenha publicada com sucesso/i, { selector: 'p' }),
     ).toBeInTheDocument()
     expect(resources.reviews.create).toHaveBeenCalledTimes(1)
   })
@@ -216,7 +216,7 @@ describe('ReviewForm', () => {
     await user.click(screen.getByRole('button', { name: /salvar alterações/i }))
 
     expect(
-      await screen.findByText(/resenha atualizada com sucesso/i),
+      await screen.findByText(/resenha atualizada com sucesso/i, { selector: 'p' }),
     ).toBeInTheDocument()
     expect(resources.reviews.update).toHaveBeenCalledWith(
       'rv_1',
@@ -244,7 +244,7 @@ describe('ReviewForm', () => {
     await user.click(screen.getByRole('button', { name: /publicar resenha/i }))
 
     expect(
-      await screen.findByText(/resenha publicada com sucesso/i),
+      await screen.findByText(/resenha publicada com sucesso/i, { selector: 'p' }),
     ).toBeInTheDocument()
     expect(resources.reviews.create).toHaveBeenCalledTimes(2)
   })

@@ -116,7 +116,7 @@
 
 ### Tests for User Story 3
 
-- [ ] T045 [P] [US3] Create integration test for publish/edit/delete review lifecycle in `tests/integration/us3-review.integration.test.jsx`
+- [X] T045 [P] [US3] Create integration test for publish/edit/delete review lifecycle in `tests/integration/us3-review.integration.test.jsx`
 - [ ] T046 [P] [US3] Create contract test for reviews resource (`GET/POST/PATCH/DELETE` + errors) in `tests/contract/us3-reviews.contract.test.js`
 
 ### Implementation for User Story 3
