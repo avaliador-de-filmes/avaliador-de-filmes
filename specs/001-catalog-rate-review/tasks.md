@@ -93,8 +93,8 @@
 
 ### Tests for User Story 2
 
-- [ ] T038 [P] [US2] Create integration test for create/edit rating flow on saved media in `tests/integration/us2-rate-media.integration.test.jsx`
-- [ ] T039 [P] [US2] Create contract test for ratings resource (`GET/POST/PATCH`) in `tests/contract/us2-ratings.contract.test.js`
+- [X] T038 [P] [US2] Create integration test for create/edit rating flow on saved media in `tests/integration/us2-rate-media.integration.test.jsx`
+- [X] T039 [P] [US2] Create contract test for ratings resource (`GET/POST/PATCH`) in `tests/contract/us2-ratings.contract.test.js`
 
 ### Implementation for User Story 2
 
