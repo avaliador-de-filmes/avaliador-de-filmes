@@ -71,15 +71,15 @@
 
 ### Implementation for User Story 1
 
-- [ ] T029 [P] [US1] Implement media search widget with OMDb query, pagination, and retry state in `src/widgets/media-search/ui/media-search.jsx`
-- [ ] T030 [P] [US1] Implement media details page loader with OMDb detail fetch + local fallback in `src/pages/media-details-page/ui/media-details-page.jsx`
-- [ ] T031 [P] [US1] Implement save-media use case (create + duplicate prevention) in `src/features/save-media/model/save-media.js` using citations `data-model.md (CatalogItem.userId)`, `data-model.md (CatalogItem.mediaId)`, `data-model.md (CatalogItem.status)`, `data-model.md (CatalogItem.userId + CatalogItem.mediaId)`, `data-model.md (Media.id)`
-- [ ] T032 [P] [US1] Implement status update use case with allowed values in `src/features/update-status/model/update-status.js` using citations `data-model.md (CatalogItem.status)`, `data-model.md (CatalogItem.updatedAt)`
-- [ ] T033 [US1] Implement save/status UI controls in `src/features/save-media/ui/save-media-controls.jsx`
-- [ ] T034 [US1] Implement personal catalog list widget in `src/widgets/catalog-list/ui/catalog-list.jsx`
-- [ ] T035 [US1] Implement catalog item removal use case in `src/features/update-status/model/remove-catalog-item.js` using citation `data-model.md (CatalogItem.id)`
-- [ ] T036 [US1] Compose catalog page with search + list widgets in `src/pages/catalog-page/ui/catalog-page.jsx`
-- [ ] T037 [US1] Wire US1 routes into the router table in `src/app/routes/router.jsx`
+- [X] T029 [P] [US1] Implement media search widget with OMDb query, pagination, and retry state in `src/widgets/media-search/ui/media-search.jsx`
+- [X] T030 [P] [US1] Implement media details page loader with OMDb detail fetch + local fallback in `src/pages/media-details-page/ui/media-details-page.jsx`
+- [X] T031 [P] [US1] Implement save-media use case (create + duplicate prevention) in `src/features/save-media/model/save-media.js` using citations `data-model.md (CatalogItem.userId)`, `data-model.md (CatalogItem.mediaId)`, `data-model.md (CatalogItem.status)`, `data-model.md (CatalogItem.userId + CatalogItem.mediaId)`, `data-model.md (Media.id)`
+- [X] T032 [P] [US1] Implement status update use case with allowed values in `src/features/update-status/model/update-status.js` using citations `data-model.md (CatalogItem.status)`, `data-model.md (CatalogItem.updatedAt)`
+- [X] T033 [US1] Implement save/status UI controls in `src/features/save-media/ui/save-media-controls.jsx`
+- [X] T034 [US1] Implement personal catalog list widget in `src/widgets/catalog-list/ui/catalog-list.jsx`
+- [X] T035 [US1] Implement catalog item removal use case in `src/features/update-status/model/remove-catalog-item.js` using citation `data-model.md (CatalogItem.id)`
+- [X] T036 [US1] Compose catalog page with search + list widgets in `src/pages/catalog-page/ui/catalog-page.jsx`
+- [X] T037 [US1] Wire US1 routes into the router table in `src/app/routes/router.jsx`
 
 **Checkpoint**: User Story 1 is independently functional and testable.
 
@@ -241,7 +241,7 @@ Run in parallel after US1 baseline:
 
 - [ ] T061 CRITICAL Configurar gates obrigatórios de qualidade com thresholds mínimos de cobertura (80% linhas/70% branches) e registrar evidências de lint/test/a11y em `vitest.config.js`, `package.json` e `specs/001-catalog-rate-review/implementation-notes.md` per Constitution III; T055; T057 (contradicts)
 - [ ] T062 CRITICAL Garantir operabilidade por teclado e regressão de acessibilidade dos fluxos principais com `tests/integration/us1-keyboard.a11y.test.jsx` e `tests/integration/critical-flows.a11y.test.jsx` per Constitution IV; FR-012; T028; T053 (missing)
-- [ ] T063 Implementar fluxo P1 de catálogo (buscar/salvar/atualizar status/remover com prevenção de duplicidade) em `src/features/save-media/model/save-media.js`, `src/features/update-status/model/update-status.js`, `src/features/update-status/model/remove-catalog-item.js`, `src/widgets/media-search/ui/media-search.jsx`, `src/widgets/catalog-list/ui/catalog-list.jsx` e `src/pages/catalog-page/ui/catalog-page.jsx`, incluindo rotas em `src/app/routes/router.jsx` per FR-001; FR-002; FR-003; FR-009; US1/AC1; US1/AC2; US1/AC3 (missing)
+- [X] T063 Implementar fluxo P1 de catálogo (buscar/salvar/atualizar status/remover com prevenção de duplicidade) em `src/features/save-media/model/save-media.js`, `src/features/update-status/model/update-status.js`, `src/features/update-status/model/remove-catalog-item.js`, `src/widgets/media-search/ui/media-search.jsx`, `src/widgets/catalog-list/ui/catalog-list.jsx` e `src/pages/catalog-page/ui/catalog-page.jsx`, incluindo rotas em `src/app/routes/router.jsx` per FR-001; FR-002; FR-003; FR-009; US1/AC1; US1/AC2; US1/AC3 (missing)
 - [ ] T064 Implementar casos de uso de avaliação com validação 1..5, regra de mídia salva e atualização da nota ativa em `src/features/rate-media/model/rate-media.js` e `src/features/rate-media/model/rating-eligibility.js` per FR-004; FR-005; US2/AC1; US2/AC2; edge-case: avaliar mídia não salva (missing)
 - [ ] T065 Integrar apresentação de média/quantidade de avaliações na interface em `src/entities/rating/ui/rating-summary.jsx` e `src/pages/media-details-page/ui/media-details-page.jsx` per FR-010; US2/AC1; US2/AC2 (partial)
 - [ ] T066 Implementar ciclo de vida de resenha (criar/editar/excluir) com regra de uma resenha ativa por usuário+mídia em `src/features/review-media/model/review-media.js` per FR-006; FR-008; FR-016; US3/AC1; US3/AC2 (missing)

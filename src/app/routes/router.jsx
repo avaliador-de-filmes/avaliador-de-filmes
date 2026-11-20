@@ -1,8 +1,12 @@
 import { Suspense } from 'react'
-import { createBrowserRouter, useRouteError } from 'react-router-dom'
+import { createBrowserRouter, Link, useRouteError } from 'react-router-dom'
+import CatalogPage from '../../pages/catalog-page/ui/catalog-page'
+import MediaDetailsPage from '../../pages/media-details-page/ui/media-details-page'
 
 export const routePaths = {
   home: '/',
+  catalog: '/catalog',
+  mediaDetails: '/media/:mediaId',
 }
 
 function RouteLoadingFallback() {
@@ -11,11 +15,16 @@ function RouteLoadingFallback() {
 
 function HomePage() {
   return (
-    <main>
+    <main className="home-page">
       <h1>Avaliador de Filmes</h1>
       <p>
-        Base da aplicação pronta. As rotas de catálogo, detalhes e página
-        pública serão conectadas nas próximas tasks.
+        Base da aplicação pronta. Busque filmes e séries, salve no catálogo
+        pessoal e acompanhe o status de acompanhamento.
+      </p>
+      <p>
+        <Link className="button" to={routePaths.catalog}>
+          Ir para o catálogo
+        </Link>
       </p>
     </main>
   )
@@ -26,6 +35,9 @@ function NotFoundPage() {
     <main>
       <h1>Página não encontrada</h1>
       <p>A rota informada não existe.</p>
+      <p>
+        <Link to={routePaths.home}>Voltar para o início</Link>
+      </p>
     </main>
   )
 }
@@ -53,6 +65,14 @@ const routeRegistry = [
   {
     path: routePaths.home,
     element: <HomePage />,
+  },
+  {
+    path: routePaths.catalog,
+    element: <CatalogPage />,
+  },
+  {
+    path: routePaths.mediaDetails,
+    element: <MediaDetailsPage />,
   },
   {
     path: '*',
