@@ -123,7 +123,7 @@
 
 - [X] T047 [P] [US3] Implement review-media use case with single-active-review enforcement in `src/features/review-media/model/review-media.js` using citations `data-model.md (Review.userId)`, `data-model.md (Review.mediaId)`, `data-model.md (Review.updatedAt)`, `data-model.md (Review.publishedAt)`, `data-model.md (Review.userId + Review.mediaId)`
 - [X] T048 [P] [US3] Implement review form UI with 20-2000 length validation and keyboard submit in `src/features/review-media/ui/review-form.jsx` using citation `data-model.md (Review.content)`
-- [ ] T049 [P] [US3] Implement public reviews widget for authenticated and visitor read-only modes in `src/widgets/public-reviews/ui/public-reviews.jsx` using citation `data-model.md (Review.isDeleted)`
+- [X] T049 [P] [US3] Implement public reviews widget for authenticated and visitor read-only modes in `src/widgets/public-reviews/ui/public-reviews.jsx` using citation `data-model.md (Review.isDeleted)`
 - [ ] T050 [US3] Implement visitor mutation permission rules in `src/features/review-media/model/review-permissions.js`
 - [ ] T051 [US3] Integrate review feature into media details page in `src/pages/media-details-page/ui/media-details-page.jsx`
 - [ ] T052 [US3] Implement public media page for anonymous read-only access in `src/pages/public-media-page/ui/public-media-page.jsx`
