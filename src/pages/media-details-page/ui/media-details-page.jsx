@@ -305,6 +305,12 @@ export default function MediaDetailsPage({
             </div>
           </article>
 
+          <p className="back-link">
+            <Link to={`/public/media/${media.id}`}>
+              Ver página pública (somente leitura)
+            </Link>
+          </p>
+
           {isSessionLoading && <p role="status">Carregando sessão...</p>}
 
           {!isSessionLoading && sessionError && (
