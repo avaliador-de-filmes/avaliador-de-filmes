@@ -194,7 +194,10 @@ function buildUrl(baseUrl, path, query) {
 export function createJsonServerClient(options = {}) {
   const env = getEnv()
   const baseUrl = options.baseUrl ?? env.VITE_API_BASE_URL ?? DEFAULT_BASE_URL
-  const fetchImpl = options.fetchImpl ?? fetch
+  // Resolve o fetch global a cada requisição para permitir interceptação por
+  // ferramentas de mock (MSW) mesmo quando o cliente é criado no import.
+  const fetchImpl =
+    options.fetchImpl ?? ((...args) => globalThis.fetch(...args))
 
   async function request(path, requestOptions = {}) {
     const url = buildUrl(baseUrl, path, requestOptions.query)

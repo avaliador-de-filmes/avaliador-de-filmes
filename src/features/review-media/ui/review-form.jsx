@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { REVIEW_CONSTRAINTS } from '../../../entities/review/model/review.schema'
 import { jsonServerResources } from '../../../shared/api/json-server/resources'
 import { announceToLiveRegion } from '../../../shared/lib/accessibility'
@@ -24,6 +24,7 @@ export default function ReviewForm({
   resources = jsonServerResources,
   onPublished,
   heading = 'Sua resenha',
+  focusToken = 0,
 }) {
   const fieldId = useId()
   const textareaRef = useRef(null)
@@ -55,6 +56,14 @@ export default function ReviewForm({
     setFieldError('')
     setErrorMessage('')
   }
+
+  // Solicitações externas (ex.: botão "Editar resenha" na listagem pública)
+  // levam o foco ao campo de texto sem interferir na digitação normal.
+  useEffect(() => {
+    if (focusToken > 0) {
+      textareaRef.current?.focus()
+    }
+  }, [focusToken])
 
   function handleChange(event) {
     setContent(event.target.value)

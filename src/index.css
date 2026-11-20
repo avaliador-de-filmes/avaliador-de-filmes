@@ -240,6 +240,13 @@ p {
   margin-top: 1rem;
 }
 
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 .media-search__form {
   display: flex;
   flex-wrap: wrap;
