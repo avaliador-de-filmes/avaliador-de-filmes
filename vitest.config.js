@@ -12,6 +12,11 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "html"],
       include: ["src/**/*.{js,jsx}"],
+      // Quality gate from Constitution III: 80% lines / 70% branches.
+      thresholds: {
+        lines: 80,
+        branches: 70,
+      },
     },
   },
 });

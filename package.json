@@ -10,8 +10,10 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit",
     "test:coverage": "vitest run --coverage",
     "test:a11y": "vitest run a11y",
+    "validate": "npm run lint && npm run test:coverage && npm run test:a11y",
     "mocks:reset": "node scripts/dev-with-mocks.mjs --reset-only",
     "mocks": "node scripts/dev-with-mocks.mjs --mocks-only",
     "dev:full": "node scripts/dev-with-mocks.mjs"

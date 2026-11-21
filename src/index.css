@@ -321,6 +321,24 @@ p {
   margin-bottom: 0;
 }
 
+.omdb-fallback__title {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.omdb-fallback__guidance {
+  color: inherit;
+  font-size: 0.95rem;
+}
+
+.omdb-fallback__local {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #efd18a;
+  border-radius: 0.5rem;
+  background-color: #fdf6e3;
+  color: #7a4d00;
+}
+
 .results-count {
   margin-bottom: 0.75rem;
   color: #3b4a5c;
