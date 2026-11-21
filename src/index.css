@@ -47,7 +47,8 @@ p {
 
 .home-page,
 .catalog-page,
-.media-details-page {
+.media-details-page,
+.public-media-page {
   width: min(1080px, 100%);
   margin: 0 auto;
   padding: 2.5rem 1.25rem 4rem;
@@ -146,7 +147,8 @@ p {
 }
 
 .field input,
-.field select {
+.field select,
+.field textarea {
   min-height: 2.5rem;
   padding: 0.5rem 0.7rem;
   border: 1px solid #c3cddb;
@@ -154,6 +156,127 @@ p {
   background-color: #ffffff;
   color: inherit;
   font: inherit;
+}
+
+.field textarea {
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.field textarea[aria-invalid='true'] {
+  border-color: #d24a3d;
+}
+
+.review-form {
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid #dde4ed;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+
+.review-form__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.review-form__form .field {
+  width: 100%;
+}
+
+.review-form__hint,
+.review-form__counter {
+  margin: 0;
+  color: #5a6b7f;
+  font-size: 0.85rem;
+}
+
+.review-form__counter {
+  align-self: flex-end;
+}
+
+.public-reviews {
+  margin-top: 2rem;
+}
+
+.public-reviews__list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.public-reviews__item {
+  padding: 1rem 1.25rem;
+  border: 1px solid #dde4ed;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+
+.public-reviews__author {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.public-reviews__meta {
+  margin-bottom: 0.5rem;
+  color: #5a6b7f;
+  font-size: 0.85rem;
+}
+
+.public-reviews__content {
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.public-reviews__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.public-ratings {
+  margin-top: 2rem;
+}
+
+.public-ratings__summary {
+  margin-bottom: 1rem;
+  color: #3b4a5c;
+  font-size: 1rem;
+}
+
+.public-ratings__list {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.public-ratings__item {
+  padding: 1rem 1.25rem;
+  border: 1px solid #dde4ed;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+
+.public-ratings__meta {
+  margin-bottom: 0;
+  color: #5a6b7f;
+  font-size: 0.9rem;
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .media-search__form {

@@ -2,11 +2,13 @@ import { Suspense } from 'react'
 import { createBrowserRouter, Link, useRouteError } from 'react-router-dom'
 import CatalogPage from '../../pages/catalog-page/ui/catalog-page'
 import MediaDetailsPage from '../../pages/media-details-page/ui/media-details-page'
+import PublicMediaPage from '../../pages/public-media-page/ui/public-media-page'
 
 export const routePaths = {
   home: '/',
   catalog: '/catalog',
   mediaDetails: '/media/:mediaId',
+  publicMedia: '/public/media/:mediaId',
 }
 
 function RouteLoadingFallback() {
@@ -73,6 +75,10 @@ const routeRegistry = [
   {
     path: routePaths.mediaDetails,
     element: <MediaDetailsPage />,
+  },
+  {
+    path: routePaths.publicMedia,
+    element: <PublicMediaPage />,
   },
   {
     path: '*',

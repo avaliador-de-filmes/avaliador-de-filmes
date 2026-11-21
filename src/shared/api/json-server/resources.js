@@ -241,6 +241,32 @@ function createReviewsGateway(client) {
   }
 }
 
+function createUsersGateway(client) {
+  return {
+    list(query = {}) {
+      return client.get('/users', { query })
+    },
+
+    async getById(id) {
+      try {
+        return await client.get(`/users/${assertRequiredString(id, 'id')}`)
+      } catch (error) {
+        return notFoundToNull(error)
+      }
+    },
+
+    async listByIds(ids = []) {
+      const uniqueIds = Array.from(new Set(ids.map((id) => String(id).trim()))).filter(
+        Boolean,
+      )
+
+      const results = await Promise.all(uniqueIds.map((id) => this.getById(id)))
+
+      return results.filter(Boolean)
+    },
+  }
+}
+
 function createMediaGateway(client) {
   return {
     list(query = {}) {
@@ -308,6 +334,7 @@ function createMediaGateway(client) {
 
 export function createJsonServerResources(client = jsonServerClient) {
   return {
+    users: createUsersGateway(client),
     catalogItems: createCatalogItemsGateway(client),
     ratings: createRatingsGateway(client),
     reviews: createReviewsGateway(client),
